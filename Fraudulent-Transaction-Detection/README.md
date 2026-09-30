@@ -1,0 +1,297 @@
+# Fraudulent Transaction Detection using Ensemble Learning
+
+## 📌 Project Overview
+
+This project focuses on detecting **fraudulent financial transactions** using Machine Learning classification techniques.
+
+The system analyzes transaction-related information such as:
+
+- Transaction Amount
+- Transaction Time
+- Account Age
+- Number of Previous Transactions
+- Location Difference
+- Device Type
+- Failed Login Attempts
+
+The target variable is **Fraud**:
+
+- `0` → Normal Transaction
+- `1` → Fraudulent Transaction
+
+The project implements and compares multiple machine learning and ensemble learning algorithms to determine their performance in detecting fraudulent transactions.
+
+---
+
+## 🎯 Objectives
+
+The main objectives of this project are:
+
+1. Preprocess the transaction dataset.
+2. Train different classification models.
+3. Compare individual and ensemble learning approaches.
+4. Evaluate models using multiple performance metrics.
+5. Analyze confusion matrices.
+6. Determine the most suitable model for fraud detection based on the obtained results.
+
+---
+
+## 🤖 Machine Learning Models
+
+The following models are implemented:
+
+### 1. Decision Tree
+
+A tree-based classification algorithm that makes decisions by splitting the dataset according to feature values.
+
+### 2. Bagging Classifier
+
+An ensemble technique that trains multiple base estimators on different bootstrap samples and combines their predictions.
+
+### 3. Random Forest
+
+An ensemble of multiple decision trees that uses random subsets of samples and features to improve generalization.
+
+### 4. AdaBoost
+
+A boosting algorithm that sequentially trains weak learners while giving more importance to previously misclassified observations.
+
+### 5. Voting Classifier
+
+Combines predictions from multiple different machine learning models and determines the final prediction through voting.
+
+---
+
+## 📊 Evaluation Metrics
+
+Each model is evaluated using:
+
+### Accuracy
+
+Measures the percentage of correctly classified transactions.
+
+```text
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+```
+
+### Precision
+
+Measures how many transactions predicted as fraud were actually fraudulent.
+
+```text
+Precision = TP / (TP + FP)
+```
+
+### Recall
+
+Measures how many actual fraudulent transactions were correctly detected.
+
+```text
+Recall = TP / (TP + FN)
+```
+
+### F1 Score
+
+Harmonic mean of precision and recall.
+
+```text
+F1 = 2 × (Precision × Recall) / (Precision + Recall)
+```
+
+### Confusion Matrix
+
+The confusion matrix contains:
+
+| | Predicted Normal | Predicted Fraud |
+|---|---:|---:|
+| **Actual Normal** | TN | FP |
+| **Actual Fraud** | FN | TP |
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Dataset
+   │
+   ▼
+Data Preprocessing
+   │
+   ├── Handle Missing Values
+   ├── Encode Categorical Features
+   └── Convert Transaction Time
+   │
+   ▼
+Feature / Target Separation
+   │
+   ▼
+Train-Test Split
+   │
+   ▼
+┌─────────────────────────────┐
+│       Machine Learning      │
+├─────────────────────────────┤
+│ Decision Tree               │
+│ Bagging Classifier          │
+│ Random Forest               │
+│ AdaBoost                    │
+│ Voting Classifier           │
+└─────────────────────────────┘
+   │
+   ▼
+Model Predictions
+   │
+   ▼
+Evaluation
+   │
+   ├── Accuracy
+   ├── Precision
+   ├── Recall
+   ├── F1 Score
+   └── Confusion Matrix
+   │
+   ▼
+Final Model Comparison
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+Fraudulent-Transaction-Detection/
+│
+├── fraudulent_transactions.csv
+├── fraud_detection_ensemble.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python**
+- **Pandas**
+- **NumPy**
+- **Scikit-learn**
+- **Matplotlib**
+- **Seaborn**
+- **Machine Learning**
+- **Ensemble Learning**
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/Fraudulent-Transaction-Detection.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd Fraudulent-Transaction-Detection
+```
+
+Install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ How to Run
+
+Make sure the dataset is present in the project directory.
+
+Run:
+
+```bash
+python fraud_detection_ensemble.py
+```
+
+The program will:
+
+1. Load the dataset.
+2. Preprocess the data.
+3. Split the dataset into training and testing sets.
+4. Train all five models.
+5. Generate predictions.
+6. Calculate evaluation metrics.
+7. Display confusion matrices.
+8. Generate a final model comparison.
+9. Display a comparison graph.
+
+---
+
+## 📈 Model Comparison
+
+After execution, the program generates a comparison table similar to:
+
+| Algorithm | Accuracy | Precision | Recall | F1 Score |
+|---|---:|---:|---:|---:|
+| Decision Tree | — | — | — | — |
+| Bagging | — | — | — | — |
+| Random Forest | — | — | — | — |
+| AdaBoost | — | — | — | — |
+| Voting | — | — | — | — |
+
+> **Note:** The actual values depend on the dataset and train-test split. The table should be populated with the results generated by the program rather than using assumed values.
+
+---
+
+## 🔍 Why Multiple Models?
+
+Fraud detection is a classification problem where different algorithms can behave differently.
+
+Comparing multiple approaches helps understand:
+
+- Which model detects fraudulent transactions effectively.
+- Which model produces fewer false positives.
+- Which model misses fewer fraudulent transactions.
+- How ensemble methods compare with a single Decision Tree.
+- Whether combining multiple models improves performance.
+
+For fraud detection, **Recall and F1 Score are particularly important**, because failing to detect an actual fraudulent transaction can be costly.
+
+---
+
+## 🚀 Key Features
+
+- ✅ Fraudulent transaction classification
+- ✅ Multiple ensemble learning techniques
+- ✅ Categorical feature encoding
+- ✅ Transaction-time preprocessing
+- ✅ Train-test split with stratification
+- ✅ Accuracy calculation
+- ✅ Precision calculation
+- ✅ Recall calculation
+- ✅ F1 Score calculation
+- ✅ Confusion Matrix visualization
+- ✅ Model comparison graph
+
+---
+
+## 📌 Conclusion
+
+This project demonstrates how different machine learning and ensemble learning techniques can be applied to **fraudulent transaction detection**.
+
+The models are evaluated using Accuracy, Precision, Recall, F1 Score, and Confusion Matrix. The final model selection should be based on the actual evaluation results, with particular consideration given to **fraud detection recall and F1 Score** rather than accuracy alone.
+
+---
+
+## 👨‍💻 Author
+
+**Ashutosh Kadu**
+
+Engineering Student | Machine Learning & Software Development Enthusiast
+
+---
+
+## ⭐ If you found this project useful
+
+Give the repository a ⭐ on GitHub!
